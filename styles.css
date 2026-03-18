@@ -1,0 +1,346 @@
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --panel: rgba(10, 19, 36, 0.72);
+  --panel-strong: rgba(8, 17, 32, 0.92);
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #f4f7fb;
+  --muted: #93a4bf;
+  --accent: #6e7bff;
+  --accent-strong: #9f6bff;
+  --success: #57d6a4;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(110, 123, 255, 0.28), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(159, 107, 255, 0.24), transparent 28%),
+    linear-gradient(135deg, #030816 0%, #08172d 52%, #0b1220 100%);
+  color: var(--text);
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+}
+
+.ambient {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  filter: blur(30px);
+  opacity: 0.45;
+}
+
+.ambient-left {
+  top: -120px;
+  left: -90px;
+  background: rgba(85, 162, 255, 0.22);
+}
+
+.ambient-right {
+  right: -140px;
+  bottom: -120px;
+  background: rgba(173, 106, 255, 0.24);
+}
+
+.login-layout {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  background: rgba(6, 12, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  border-radius: 28px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+.brand-panel {
+  padding: 56px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+    linear-gradient(135deg, rgba(110, 123, 255, 0.22), rgba(87, 214, 164, 0.08));
+}
+
+.brand-chip {
+  display: inline-flex;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #dce6ff;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brand-panel h1 {
+  margin: 28px 0 16px;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.04;
+  max-width: 10ch;
+}
+
+.brand-panel > p {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.feature-list {
+  margin-top: 40px;
+  display: grid;
+  gap: 18px;
+}
+
+.feature-list article {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(8, 18, 35, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-list span {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 12px 24px rgba(110, 123, 255, 0.35);
+}
+
+.feature-list strong,
+.panel-header h2 {
+  font-size: 1.1rem;
+}
+
+.feature-list p,
+.eyebrow,
+.panel-footer,
+.form-meta a,
+.checkbox-row,
+.message {
+  color: var(--muted);
+}
+
+.feature-list p {
+  margin: 6px 0 0;
+  line-height: 1.6;
+}
+
+.form-panel {
+  padding: 40px;
+  background: var(--panel);
+}
+
+.panel-header,
+.form-meta,
+.social-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.ghost-button,
+.social-grid button {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.ghost-button {
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.social-grid {
+  margin: 28px 0 20px;
+}
+
+.social-grid button {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 16px;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0 28px;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.divider span {
+  position: relative;
+  padding: 0 16px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 18px;
+}
+
+.login-form label {
+  display: grid;
+  gap: 10px;
+  font-size: 0.96rem;
+}
+
+.login-form input[type='email'],
+.login-form input[type='password'] {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--panel-strong);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-form input:focus {
+  border-color: rgba(110, 123, 255, 0.8);
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(110, 123, 255, 0.16);
+}
+
+.form-meta {
+  font-size: 0.92rem;
+}
+
+.checkbox-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.form-meta a,
+.panel-footer a {
+  color: #dbe4ff;
+  text-decoration: none;
+}
+
+.primary-button {
+  margin-top: 6px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 18px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 20px 28px rgba(110, 123, 255, 0.35);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+}
+
+.message {
+  min-height: 24px;
+  margin: 0;
+}
+
+.panel-footer {
+  margin-top: 28px;
+  text-align: center;
+}
+
+@media (max-width: 920px) {
+  .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-panel,
+  .form-panel {
+    padding: 32px;
+  }
+
+  .brand-panel h1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 18px;
+  }
+
+  .brand-panel,
+  .form-panel {
+    padding: 24px;
+  }
+
+  .panel-header,
+  .form-meta,
+  .social-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ghost-button {
+    width: 100%;
+  }
+}
