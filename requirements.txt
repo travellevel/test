@@ -1,0 +1,13 @@
+langchain 
+wikipedia 
+langchain-community 
+python-dotenv
+pydantic
+duckduckgo-search
+langchain-ollama
+langchain-chroma
+pandas
+
+requests
+bs4
+streamlit
