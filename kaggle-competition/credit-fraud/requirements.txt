@@ -1,0 +1,9 @@
+numpy>=1.26,<3
+pandas>=2.2,<3
+scikit-learn>=1.6,<2
+torch>=2.7.1,<3
+kagglehub>=0.3.13,<1
+matplotlib>=3.8,<4
+rtdl-revisiting-models==0.0.2
+pytorch-tabnet==4.1.0
+catboost==1.2.10
